@@ -1,15 +1,15 @@
 ---
-version: 6.2.0
+version: dev
 slug: configurator
 name: File editor
 description: Simple browser-based file editor for Home Assistant
-url: https://github.com/home-assistant/addons/tree/master/configurator
+url: https://github.com/home-assistant/app-configurator
 arch:
   - aarch64
   - amd64
 homeassistant: 0.91.1
 homeassistant_api: true
-image: homeassistant/{arch}-addon-configurator
+image: ghcr.io/home-assistant/app-configurator
 ingress: true
 init: false
 map:

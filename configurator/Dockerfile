@@ -1,11 +1,10 @@
-ARG BUILD_FROM
+ARG BUILD_FROM=ghcr.io/home-assistant/base:3.24-2026.06.1
 FROM $BUILD_FROM
 
 ENV PIP_BREAK_SYSTEM_PACKAGES=1
 
 # Setup base
-ARG BUILD_ARCH
-ARG CONFIGURATOR_VERSION
+ARG CONFIGURATOR_VERSION=0.6.0
 RUN \
     apk add --no-cache \
         git \
@@ -25,3 +24,9 @@ COPY rootfs /
 
 # Health check
 HEALTHCHECK CMD curl --fail http://127.0.0.1:8099 || exit 1
+
+LABEL \
+    org.opencontainers.image.title="Home Assistant App: File editor" \
+    org.opencontainers.image.description="Simple browser-based file editor for Home Assistant" \
+    org.opencontainers.image.source="https://github.com/home-assistant/app-configurator" \
+    org.opencontainers.image.licenses="Apache License 2.0"

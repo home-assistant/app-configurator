@@ -5,7 +5,7 @@ FROM $BUILD_FROM
 ENV PIP_BREAK_SYSTEM_PACKAGES=1
 
 # Setup base
-ARG CONFIGURATOR_VERSION=0.6.0
+ARG CONFIGURATOR_VERSION=0.7.0
 RUN \
     apk add --no-cache \
         git \

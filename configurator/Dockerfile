@@ -25,7 +25,7 @@ COPY rootfs /
 
 # Health check
 HEALTHCHECK --start-period=30s --start-interval=5s --interval=30s \
-    CMD curl --fail http://127.0.0.1:8099 || exit 1
+    CMD curl --fail http://127.0.0.1:8099/api/netstat || exit 1
 
 LABEL \
     org.opencontainers.image.title="Home Assistant App: File editor" \
